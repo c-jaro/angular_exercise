@@ -1,0 +1,21 @@
+<mat-card *ngIf="movie" class=" align-items-start mx-auto mt-5">
+  <div class="row w-100 justify-content-center">
+    <!-- Container for Image -->
+    <div class="image-container col-2">
+      <img src="{{ movie.Poster }}" class="w-100 mx-auto" />
+    </div>
+
+    <!-- Container for Text -->
+    <div class="ml-3 col-5">
+      <mat-card-header class="p-0">
+        <mat-card-title>{{ movie.Title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="p-0">
+        <p><strong>Year:</strong> {{ movie.Year }}</p>
+        <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+        <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+        <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+      </mat-card-content>
+    </div>
+  </div>
+</mat-card>

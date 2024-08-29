@@ -1,0 +1,14 @@
+<mat-card *ngIf="movie" class="w-25 mx-auto p-0">
+  <mat-card-header class="mx-auto p-1">
+    <mat-card-title>{{ movie.Title }}</mat-card-title>
+    <mat-card-subtitle>{{ movie.Genre }} | {{ movie.Year }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="movie.Poster" alt="{{ movie.Title }}" class="w-50 mx-auto"/>
+  <mat-card-content class="m-1 d-flex mx-auto flex-column p-1">
+    <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+    <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">Return to Movies</button> <!-- Add return button -->
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,41 @@
+<div class="container my-4">
+  <label class="d-block mb-3">
+    <span class="mat-body-1 text-secondary p-2">Minimum Year:</span>
+    <input
+      type="number"
+      class="form-control w-25 d-inline-block ml-2"
+      [(ngModel)]="minYear"
+      (input)="onYearChange(minYear)"
+    />
+  </label>
+
+  <hr class="my-4" />
+
+  <mat-grid-list cols="5" rowHeight="1:1" gutterSize="16px">
+    <mat-grid-tile *ngFor="let movie of movies">
+      <div class="d-flex flex-column">
+        <div
+          class="d-flex p-0"
+          matTooltip="{{ movie.Title }}: {{ movie.Genre }} - {{ movie.Year }}"
+          matTooltipPosition="below"
+          (click)="onSelectMovie(movie)"
+          (mouseover)="onHoverMovie(movie)"
+        >
+          <img
+            mat-card-image
+            [src]="movie.Poster"
+            alt="{{ movie.Title }}"
+            class="w-50 mx-auto"
+          />
+        </div>
+        <div class="mx-auto">
+          {{ movie.Title }}
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+@if(hoveredMovie !== null){
+<app-moviedesc [movie]="hoveredMovie"></app-moviedesc>
+}
