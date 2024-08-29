@@ -1,19 +1,19 @@
 <div class="h-100">
-<mat-toolbar color="primary">
-	<button mat-button [matMenuTriggerFor]="appMenu">
-	  <mat-icon>menu</mat-icon>
-	  Menu
-	</button>
-	
-	<mat-menu #appMenu="matMenu">
-	  <button mat-menu-item routerLink="/movies">Movies</button>
-	  <button mat-menu-item routerLink="/admin">Administration</button>
-	  <button mat-menu-item routerLink="/login">Login</button>
-	</mat-menu>
-  
-	<span class="toolbar-spacer"></span>
-  
-	<span class="p-2">Movie App</span>
+  <mat-toolbar color="primary">
+    <button mat-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>menu</mat-icon>
+      Menu
+    </button>
+
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item routerLink="/movies">Movies</button>
+      <button mat-menu-item routerLink="/admin">Administration</button>
+      <button mat-menu-item routerLink="/login">Login</button>
+    </mat-menu>
+
+    <span class="toolbar-spacer"></span>
+
+    <span class="p-2">Movie App</span>
   </mat-toolbar>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>

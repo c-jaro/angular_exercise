@@ -12,8 +12,7 @@ export class MovieListComponent {
   basemovies: Movie[] = [];
   movies: Movie[] = [];
   hoveredMovie: Movie | null = null;
-  movieDescPosition = { top: '0px', left: '0px' };
-  minYear = 1988;
+  minYear = 0;
   constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit() {
@@ -21,7 +20,7 @@ export class MovieListComponent {
       this.movies = movies;
       this.basemovies = movies;
     });
-	this.onYearChange(this.minYear);
+    this.onYearChange(this.minYear);
   }
 
   onYearChange(year: number) {
